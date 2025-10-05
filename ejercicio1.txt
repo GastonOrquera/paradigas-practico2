@@ -1,0 +1,27 @@
+Reglas de Sintaxis
+
+Símbolos válidos: cuáles letras, dígitos, paréntesis, operadores, palabras reservadas, etc., se pueden usar.
+Ej: se permite 1, 2, +, SUM, ADD, (, ).
+
+Formación de expresiones: cómo combinar símbolos para formar expresiones válidas.
+Ej: para una suma, se puede tener 1 + 2, SUM(1,2), ADD 0001 0010. No se acepta algo como +1 2 (si la sintaxis lo prohíbe).
+
+Jerarquía o estructura: reglas de precedencia, orden de aplicación de operadores, agrupamientos con paréntesis.
+
+Grupos de datos o tipos: reglas que especifican qué tipo de dato va dónde —naturales, enteros, booleanos, funciones, conjuntos, etc.
+
+Reglas de formación de declaraciones/comandos: cuándo una instrucción está bien escrita. Ej: asignaciones, definiciones de funciones, llamadas, etc.
+
+Reglas de ambigüedad: evitar ambigüedades sintácticas, es decir, que una sola cadena de símbolos pueda interpretarse de dos maneras distintas según la sintaxis.
+
+Reglas de Semántica
+
+Significado de los símbolos: qué significa “+”, “SUM”, “ADD”, etc., en términos de operación matemática.
+
+Dominio y codominio de funciones: qué entradas acepta una función y qué salida produce. Ej: sumar dos naturales produce un natural.
+
+Restricciones semánticas: por ejemplo, qué operaciones están permitidas en ciertos tipos, qué sucede si se divide por cero, etc.
+
+Comportamiento de composición: si una expresión está compuesta por subexpresiones, cómo se evalúan esas subexpresiones, en qué orden, con qué reglas de evaluación.
+
+Regla de interpretación global: para todo el programa, qué significa ejecutarlo —qué efectos produce, cuál es su resultado, cuándo termina, etc.
