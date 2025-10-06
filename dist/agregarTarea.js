@@ -18,16 +18,7 @@ function agregarTarea() {
         let cantTareas = Number(yield (0, io_1.input)("Cuantas tareas desea agregar: \n"));
         console.clear();
         console.log("Esta creando una nueva tarea.\n");
-        crearTarea();
-        console.log("Tareas creadas exitosamente.\n");
-    });
-}
-function getTareas() {
-    return tareas;
-}
-function crearTarea() {
-    return __awaiter(this, void 0, void 0, function* () {
-        for (let i = 0; i < tareas.length; i++) {
+        for (let i = 0; i < cantTareas; i++) {
             let titulo;
             do {
                 titulo = yield (0, io_1.input)(`T${i + 1} - Ingrese el titulo: ⋙ `);
@@ -45,8 +36,7 @@ function crearTarea() {
                 descripcion = yield (0, io_1.input)(`T${i + 1} - Ingrese la descripcion: ⋙ `);
                 if (descripcion.length > 500) {
                     console.log("\nLa descripcion no puede contener mas de 500 caracteres.");
-                    console.log("Cantidad de caracteres ingresados: ");
-                    console.log(descripcion.length);
+                    console.log("Cantidad de caracteres ingresados: ", descripcion.length);
                     return;
                 }
             } while (descripcion.length > 500);
@@ -76,10 +66,38 @@ function crearTarea() {
                 case 4:
                     estado = "Cancelada";
                     break;
+                default:
+                    estado = "Pendiente";
+                    break;
+            }
+            let dificultad;
+            do {
+                dificultad = yield (0, io_1.input)(`${i + 1} - Ingrese la dificultad:\n` +
+                    "[1] Fácil\n" +
+                    "[2] Media\n" +
+                    "[3] Difícil\n⋙ ");
+                if (!["1", "2", "3"].includes(dificultad)) {
+                    console.log("Opción inválida. Ingrese 1, 2 o 3.\n");
+                }
+            } while (!["1", "2", "3"].includes(dificultad));
+            switch (dificultad) {
+                case "1":
+                    dificultad = "🌟🌑🌑";
+                    break;
+                case "2":
+                    dificultad = "🌟🌟🌑";
+                    break;
+                case "3":
+                    dificultad = "🌟🌟🌟";
+                    break;
             }
             // Guardar las tareas en el array
             console.log(`Tarea N° [${i + 1}] cargada...\n`);
-            tareas.push({ titulo, descripcion, estado });
+            tareas.push({ titulo, descripcion, estado, dificultad });
         }
+        console.log("Tareas creadas exitosamente.\n");
     });
+}
+function getTareas() {
+    return tareas;
 }

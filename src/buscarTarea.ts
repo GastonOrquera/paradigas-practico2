@@ -16,6 +16,7 @@ export async function buscarTarea(): Promise<void> {
         console.log(`Título: ${t.titulo}`);
         console.log(`Descripción: ${t.descripcion}`);
         console.log(`Estado: ${t.estado}`);
+        console.log(`Dificultad: ${t.dificultad}`);
         console.log("---- ---- ---- ---- ---- ----\n");
     } else {
         console.log("Opción incorrecta.\n");

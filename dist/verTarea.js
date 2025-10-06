@@ -22,7 +22,7 @@ function verTarea() {
         }
         let opcion;
         do {
-            console.log("¿Qué tareas deseas ver?\n  [1] - Todas\n  [2] - Pendientes\n  [3] - En curso\n  [4] - Terminadas\n  [5] - Terminadas\n  [0] - Volver\n");
+            console.log("¿Qué tareas deseas ver?\n  [1] - Todas\n  [2] - Pendientes\n  [3] - En curso\n  [4] - Terminadas\n  [5] - Canceladas\n  [0] - Volver\n");
             opcion = Number(yield (0, io_1.input)("⋙ "));
             switch (opcion) {
                 case 1:
@@ -53,12 +53,11 @@ function verTarea() {
 function verTodas() {
     return __awaiter(this, void 0, void 0, function* () {
         let tareas = (0, agregarTarea_1.getTareas)();
-        // let hayPendientes = false;
         for (let i = 0; i < tareas.length; i++) {
-            // hayPendientes = true;
             console.log(`Tarea [${i + 1}] - Titulo: ${tareas[i].titulo}`);
             console.log(`Descripción: ${tareas[i].descripcion}`);
             console.log(`Estado: ${tareas[i].estado}`);
+            console.log(`Dificultad: ${tareas[i].dificultad}`);
             console.log("---- ---- ---- ---- ---- ----\n");
         }
         // if (!hayPendientes) {

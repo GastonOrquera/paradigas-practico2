@@ -81,9 +81,9 @@ export async function agregarTarea(): Promise<void> {
         } while (!["1", "2", "3"].includes(dificultad));
 
         switch (dificultad) {
-            case "1": dificultad = "Fácil"; break;
-            case "2": dificultad = "Media"; break;
-            case "3": dificultad = "Difícil"; break;
+            case "1": dificultad = "🌟🌑🌑"; break;
+            case "2": dificultad = "🌟🌟🌑"; break;
+            case "3": dificultad = "🌟🌟🌟"; break;
         }
 
         // Guardar las tareas en el array

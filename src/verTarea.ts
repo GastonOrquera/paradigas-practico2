@@ -16,7 +16,7 @@ export async function verTarea(): Promise<void> {
     let opcion: number;
 
     do {
-        console.log("¿Qué tareas deseas ver?\n  [1] - Todas\n  [2] - Pendientes\n  [3] - En curso\n  [4] - Terminadas\n  [5] - Terminadas\n  [0] - Volver\n");
+        console.log("¿Qué tareas deseas ver?\n  [1] - Todas\n  [2] - Pendientes\n  [3] - En curso\n  [4] - Terminadas\n  [5] - Canceladas\n  [0] - Volver\n");
         opcion = Number(await input("⋙ "));
 
         switch (opcion) {
@@ -44,14 +44,10 @@ async function verTodas(): Promise<void> {
         console.log("---- ---- ---- ---- ---- ----\n");
     }
 
-    // if (!hayPendientes) {
-    //     console.log("No hay tareas.\n");
-    // }
 }
 
 async function pendientes(): Promise<void> {
     let tareas = getTareas();
-
 
     let hayPendientes = false;
 
@@ -61,6 +57,7 @@ async function pendientes(): Promise<void> {
             console.log(`Tarea [${i + 1}] - Título: ${tareas[i].titulo}`);
             console.log(`Descripción: ${tareas[i].descripcion}`);
             console.log(`Estado: ${tareas[i].estado}`);
+            console.log(`Dificultad: ${tareas[i].dificultad}`);
             console.log("---- ---- ---- ---- ---- ----\n");
         }
     }
@@ -73,7 +70,6 @@ async function pendientes(): Promise<void> {
 async function enCurso(): Promise<void> {
     let tareas = getTareas();
 
-
     let hayPendientes = false;
 
     console.log("---- TAREAS EN CURSO ----\n");
@@ -84,6 +80,7 @@ async function enCurso(): Promise<void> {
             console.log(`Tarea [${i + 1}] - Título: ${tareas[i].titulo}`);
             console.log(`Descripción: ${tareas[i].descripcion}`);
             console.log(`Estado: ${tareas[i].estado}`);
+            console.log(`Dificultad: ${tareas[i].dificultad}`);
             console.log("---- ---- ---- ---- ---- ----\n");
         }
     }
@@ -96,7 +93,6 @@ async function enCurso(): Promise<void> {
 async function terminadas(): Promise<void> {
     let tareas = getTareas();
 
-
     let hayPendientes = false;
 
     console.log("---- TAREAS TERMINADAS ----\n");
@@ -107,6 +103,7 @@ async function terminadas(): Promise<void> {
             console.log(`Tarea [${i + 1}] - Título: ${tareas[i].titulo}`);
             console.log(`Descripción: ${tareas[i].descripcion}`);
             console.log(`Estado: ${tareas[i].estado}`);
+            console.log(`Dificultad: ${tareas[i].dificultad}`);
             console.log("---- ---- ---- ---- ---- ----\n");
         }
     }
@@ -129,6 +126,7 @@ async function cancelada(): Promise<void> {
             console.log(`Tarea [${i + 1}] - Título: ${tareas[i].titulo}`);
             console.log(`Descripción: ${tareas[i].descripcion}`);
             console.log(`Estado: ${tareas[i].estado}`);
+            console.log(`Dificultad: ${tareas[i].dificultad}`);
             console.log("---- ---- ---- ---- ---- ----\n");
         }
     }
